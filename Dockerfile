@@ -50,7 +50,7 @@ RUN uv venv && \
 # ---------- Runtime ----------
 ENV HERMES_WEB_DIST=/opt/hermes/hermes_cli/web_dist
 ENV HERMES_HOME=/opt/data
-ENV PATH="/opt/data/.local/bin:${PATH}"
+ENV "/opt/hermes/.venv/bin:/opt/data/.local/bin:${PATH}"
 
 # Railway does not support Dockerfile VOLUME.
 # Add a Railway Volume in the service settings and mount it to /opt/data.
