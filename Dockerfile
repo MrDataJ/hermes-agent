@@ -61,4 +61,4 @@ ENV PATH="/opt/hermes/.venv/bin:/opt/data/.local/bin:${PATH}"
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint.sh" ]
 
 # Start the Hermes gateway for Telegram/messaging + cron scheduler.
-CMD ["gateway", "start"]
+CMD ["gateway", "run"]
