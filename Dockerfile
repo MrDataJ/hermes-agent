@@ -47,6 +47,10 @@ USER hermes
 RUN uv venv && \
     uv pip install --no-cache-dir -e ".[all]"
 
+# Switch back to root so the Docker entrypoint can fix Railway volume permissions,
+# then it should drop back to the hermes user using gosu.
+USER root
+
 # ---------- Runtime ----------
 ENV HERMES_WEB_DIST=/opt/hermes/hermes_cli/web_dist
 ENV HERMES_HOME=/opt/data
