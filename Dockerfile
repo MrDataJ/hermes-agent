@@ -55,3 +55,6 @@ ENV PATH="/opt/hermes/.venv/bin:/opt/data/.local/bin:${PATH}"
 # Railway does not support Dockerfile VOLUME.
 # Add a Railway Volume in the service settings and mount it to /opt/data.
 ENTRYPOINT [ "/opt/hermes/docker/entrypoint.sh" ]
+
+# Start the web dashboard instead of the interactive terminal UI.
+CMD ["dashboard", "--host", "0.0.0.0", "--port", "9119", "--insecure", "--no-open"]
